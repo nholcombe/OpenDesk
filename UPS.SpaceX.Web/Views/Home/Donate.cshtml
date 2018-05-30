@@ -1,12 +1,36 @@
-﻿
+﻿@model UPS.SpaceX.Web.Models.DatePickerModel
 @{
     ViewBag.Title = "Donate";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-
 <h2>Donate</h2>
 
 
+@using (Html.BeginForm())
+{
+    <br />
+    <p>Desk : </p>
 
+    <br/>
+    <p>Date : @Html.EditorFor(model => model.dtmDate, new { htmlAttributes = new { @class = "datepicker" } })</P>
+}
+
+<link href="~/Content/jquery-ui-1.12.1.min.css" rel="stylesheet" />
+
+@section scripts{
+
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+
+    <script>
+        $(function () {
+            $(".datepicker").datepicker({
+                dateFormat: "mm/dd/yy",
+                changeMonth: true,
+                changeYear: true,
+                showOn: "both",
+                buttonText: "Select"
+            });
+        });
+    </script>
+}
