@@ -25,7 +25,8 @@ namespace UPS.SpaceX.Web
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap-lux.css",
-                      "~/Content/Site.css"));
+                      "~/Content/Site.css",
+                      "~/Content/Home.css"));
         }
     }
 }
