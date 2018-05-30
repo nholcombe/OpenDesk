@@ -4184,6 +4184,7 @@ input[type="button"].btn-block {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 1.5rem 1rem;
+  top: -50px;
 }
 
 .navbar > .container,
@@ -9539,4 +9540,14 @@ th {
 
 .card-title, .card-header {
   color: inherit;
+}
+
+.someClass {
+    /*background-color: gold;*/
+    color: gold;
+    font-size: 10pt;
+    margin: 10px;
+    padding: 5px;
+    width: 80px;
+    border-radius: 25px;
 }
