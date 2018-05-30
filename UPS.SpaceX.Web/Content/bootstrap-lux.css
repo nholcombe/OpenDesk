@@ -178,8 +178,8 @@ a {
 }
 
 a:hover {
-  color: black;
-  text-decoration: underline;
+  color: gold;
+  /*text-decoration: underline;*/
 }
 
 a:not([href]):not([tabindex]) {
@@ -9540,14 +9540,4 @@ th {
 
 .card-title, .card-header {
   color: inherit;
-}
-
-.someClass {
-    /*background-color: gold;*/
-    color: gold;
-    font-size: 10pt;
-    margin: 10px;
-    padding: 5px;
-    width: 80px;
-    border-radius: 25px;
 }
