@@ -4,7 +4,32 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/actions/desks.js"></script>
+<script>$('.datepicker').datepicker({
+        format: 'mm/dd/yyyy',
+        startDate: '-3d'
+    });</script>
 
 
-<h2>Reserve</h2>
+<br />
+<h1>Reserve a Desk</h1>
+
+<h2>Desk:</h2>
+<br />
+
+<div id="DivAvailableDesks">
+
+</div>
+
+<br />
+<h2>Date:</h2>
+
+<div class="input-group date" data-provide="datepicker">
+    <input type="text" class="form-control">
+    <div class="input-group-addon">
+        <span class="glyphicon glyphicon-th"></span>
+    </div>
+</div>
+
 
