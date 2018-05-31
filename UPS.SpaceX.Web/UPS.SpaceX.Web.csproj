@@ -271,6 +271,7 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Shared\homepage.cshtml" />
     <Content Include="Views\Home\LookUp.cshtml" />
+    <Content Include="Views\Shared\TestDesk.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
