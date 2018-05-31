@@ -33,5 +33,12 @@ namespace UPS.SpaceX.Web.Controllers
 
             return View();
         }
+
+        public ActionResult LookUp()
+        {
+            ViewBag.Message = "Your mapppp page.";
+
+            return View();
+        }
     }
 }
