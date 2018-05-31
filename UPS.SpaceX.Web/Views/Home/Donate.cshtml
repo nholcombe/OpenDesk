@@ -15,41 +15,69 @@
     <h2>@ViewBag.Title</h2>
 
     <div class=script-wrap>
+        <div id="textFields">
+
+            @using (Html.BeginForm())
+            {
+                <br />
+                <p style="width: 100%; position: relative;">Desk : @Html.DropDownList("OpenDeskList", li, "")</p>
+
+                <br />
+                <p id="date">Date : @Html.EditorFor(model => model.dtmDate, new { htmlAttributes = new { @class = "datepicker" } })</p>
+            }
+
+            <link href="~/Content/jquery-ui-1.12.1.min.css" rel="stylesheet" />
 
 
-        @using (Html.BeginForm())
-        {
-            <br />
-            <p style="width: 70%; text-align: center; position: relative;">Desk : @Html.DropDownList("OpenDeskList", li, "")</p>
-
-            <br />
-            <p>Date : @Html.EditorFor(model => model.dtmDate, new { htmlAttributes = new { @class = "datepicker" } })</p>
-        }
-
-        <link href="~/Content/jquery-ui-1.12.1.min.css" rel="stylesheet" />
-
-        @section scripts{
-            <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
-            <script>
-                $(function () {
-                    $(".datepicker").datepicker({
-                        dateFormat: "mm/dd/yy",
-                        changeMonth: true,
-                        changeYear: true,
-                        showOn: "both",
-                        buttonText: "Select"
+            @section scripts{
+                <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+                <script>
+                    $(function () {
+                        $(".datepicker").datepicker({
+                            dateFormat: "mm/dd/yy",
+                            changeMonth: true,
+                            changeYear: true,
+                            showOn: "both",
+                            buttonText: "Select"
+                        });
                     });
-                });
-            </script>
-        }
+                </script>
+            }
+        </div>
 
         <br />
-        <button onclick="location.href = 'Index';" id="don_btn" submit-button">Back</button>
-        <button onclick="location.href = 'Index';" id="don_btn" submit-button">Proceed</button>
-        <br />
+        <button onclick="location.href = 'modal';" class="btn btn-warning" submit-button>Back</button>
+        <!-- Button trigger modal -->
+        <button class="btn btn-warning" type="button" data-toggle="modal" data-target="#exampleModal">
+            Proceed
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Enter an email address to confirm your seat</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input class="form-control" id="emailField" aria-describedby="emailHelp" placeholder="Enter email" type="email">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-warning">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+
     </div>
-
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-
-</div>
