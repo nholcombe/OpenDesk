@@ -1,12 +1,12 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Reserve";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>
 <script src="~/Scripts/actions/desks.js"></script>
-<script>$('.datepicker').datepicker({
+<script>
+    $('.datepicker').datepicker({
         format: 'mm/dd/yyyy',
         startDate: '-3d'
     });</script>
@@ -22,6 +22,8 @@
 
 </div>
 
+@Html.Partial("_AvailableDesks")
+
 <br />
 <h2>Date:</h2>
 
@@ -31,5 +33,3 @@
         <span class="glyphicon glyphicon-th"></span>
     </div>
 </div>
-
-
