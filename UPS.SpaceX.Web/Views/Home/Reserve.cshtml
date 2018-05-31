@@ -5,7 +5,8 @@
 
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>
 <script src="~/Scripts/actions/desks.js"></script>
-<script>$('.datepicker').datepicker({
+<script>
+    $('.datepicker').datepicker({
         format: 'mm/dd/yyyy',
         startDate: '-3d'
     });</script>
@@ -17,10 +18,9 @@
 <h2>Desk:</h2>
 <br />
 
-   fgfgdfg
+<div id="DivAvailableDesks">
 
-@Html.Partial("_AvailableDesks")
-
+</div>
 <br />
 <h2>Date:</h2>
 
@@ -30,5 +30,3 @@
         <span class="glyphicon glyphicon-th"></span>
     </div>
 </div>
-
-
