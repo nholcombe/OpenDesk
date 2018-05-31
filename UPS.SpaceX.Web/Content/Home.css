@@ -1,0 +1,15 @@
+﻿#b1 {
+    background-color: black;
+}
+
+#b2 {
+    position: relative;
+    display: block;
+    background-color: gold;
+    border-radius: 25px;
+    border: none;
+    width: 50%;
+    height: 40px;
+    left: 25%;
+    margin-bottom: 25px;
+}
