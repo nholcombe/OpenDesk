@@ -1,12 +1,43 @@
-﻿
+﻿@model UPS.SpaceX.Web.Models.DatePickerModels
 @{
     ViewBag.Title = "Donate";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+    List<SelectListItem> li = new List<SelectListItem>();
+    li.Add(new SelectListItem() { Text = "N243N", Value = "1" });
+    li.Add(new SelectListItem() { Text = "N243N", Value = "2" });
+    li.Add(new SelectListItem() { Text = "N243N", Value = "3" });
 }
+
+<h2>Donate</h2>
 
 
 
 <button type="button" class="btn btn-primary">Back</button> <h2 style ="text-align:center">Donate</h2>
 
+@using (Html.BeginForm())
+{
+    <br />
+    <p>Desk : @Html.DropDownList("OpenDeskList", li, "Select")</p>
 
+    <br/>
+    <p>Date : @Html.EditorFor(model => model.dtmDate, new { htmlAttributes = new { @class = "datepicker" } })</P>
+}
 
+<link href="~/Content/jquery-ui-1.12.1.min.css" rel="stylesheet" />
+@section scripts{
+
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+
+    <script>
+        $(function () {
+            $(".datepicker").datepicker({
+                dateFormat: "mm/dd/yy",
+                changeMonth: true,
+                changeYear: true,
+                showOn: "both",
+                buttonText: "Select"
+            });
+        });
+    </script>
+}
