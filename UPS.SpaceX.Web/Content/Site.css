@@ -1,14 +1,12 @@
 ﻿body {
-    /*padding-top: 50px;*/
+    padding-top: 50px;
     padding-bottom: 20px;
-    color: white;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
-    color: white;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -27,14 +25,23 @@ textarea {
 
 .navbar navbar-expand-lg navbar-dark bg-primary{
     position: relative;
-    top: -100px;
 }
 
 li{
     color: white;
 }
 
-.someClass{
-    background-color: blue;
-    margin: 25px;
+.someClass {
+    color: white;
+    font-size: 10pt;
+    margin: 10px;
+    padding: 5px;
+    width: 80px;
+}
+
+#AppTitle {
+    color: gold;
+    font-size: 25pt;
+    position: relative;
+    text-align: center;
 }
