@@ -8,12 +8,13 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body id="b1">
-    <div class="container body-content">
+    <div class="container body-content" style="align-items:center">
         @RenderBody()
         <br /><br />
-        <button onclick="location.href = 'Donate';" id="b2" submit-button">Donate Your Desk!</button>
-        <button onclick="location.href = 'Reserve';" id="b2" submit-button">Reserve A Desk!</button>
-        <button onclick="location.href = 'FloorMap';" id="b2" submit-button">Map</button>
+        <button onclick="location.href = 'Donate';" class="btn btn-warning">Donate Your Desk!</button><br /><br />
+        <button onclick="location.href = 'Reserve';" class="btn btn-warning">Reserve A Desk!</button><br /><br />
+        <button onclick="location.href = 'LookUp';" class="btn btn-warning">Current Reservations</button><br /><br />
+        <button onclick="location.href = 'FloorMap';" class="btn btn-warning">Map</button>
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
