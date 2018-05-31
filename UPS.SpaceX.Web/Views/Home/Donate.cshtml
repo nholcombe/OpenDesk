@@ -3,39 +3,53 @@
     ViewBag.Title = "Donate";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
-    List<SelectListItem> li = new List<SelectListItem>();
+    List<SelectListItem>
+    li = new List<SelectListItem>();
     li.Add(new SelectListItem() { Text = "N243N", Value = "1" });
     li.Add(new SelectListItem() { Text = "N243N", Value = "2" });
     li.Add(new SelectListItem() { Text = "N243N", Value = "3" });
 }
 
-<h2>Donate</h2>
+<div class="donateMain">
+
+    <h2>@ViewBag.Title</h2>
+
+    <div class=script-wrap>
 
 
-@using (Html.BeginForm())
-{
-    <br />
-    <p>Desk : @Html.DropDownList("OpenDeskList", li, "Select")</p>
+        @using (Html.BeginForm())
+        {
+            <br />
+            <p>Desk : @Html.DropDownList("OpenDeskList", li, "&nbsp&nbsp")</p>
 
-    <br/>
-    <p>Date : @Html.EditorFor(model => model.dtmDate, new { htmlAttributes = new { @class = "datepicker" } })</P>
-}
+            <br />
+            <p>Date : @Html.EditorFor(model => model.dtmDate, new { htmlAttributes = new { @class = "datepicker" } })</p>
+        }
 
-<link href="~/Content/jquery-ui-1.12.1.min.css" rel="stylesheet" />
+        <link href="~/Content/jquery-ui-1.12.1.min.css" rel="stylesheet" />
 
-@section scripts{
+        @section scripts{
+            <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+            <script>
+                $(function () {
+                    $(".datepicker").datepicker({
+                        dateFormat: "mm/dd/yy",
+                        changeMonth: true,
+                        changeYear: true,
+                        showOn: "both",
+                        buttonText: "Select"
+                    });
+                });
+            </script>
+        }
 
-    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+        <br />
+        <button onclick="location.href = 'Index';" id="don_btn" submit-button">Back</button>
+        <button onclick="location.href = 'Index';" id="don_btn" submit-button">Proceed</button>
+        <br />
+    </div>
 
-    <script>
-        $(function () {
-            $(".datepicker").datepicker({
-                dateFormat: "mm/dd/yy",
-                changeMonth: true,
-                changeYear: true,
-                showOn: "both",
-                buttonText: "Select"
-            });
-        });
-    </script>
-}
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</div>
