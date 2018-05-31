@@ -1,37 +1,12 @@
 ﻿@model UPS.SpaceX.Web.Models.DatePickerModels
 @{
-    /**/
-
     ViewBag.Title = "Reserve";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<link href="~/Content/jquery-ui-1.12.1.min.css" rel="stylesheet" />
-@section scripts {
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    <script src="~/Scripts/actions/desks.js"></script>
-    <script>
-        $(function () {
-            $(".datepicker").datepicker({
-                dateFormat: "mm/dd/yy",
-                changeMonth: true,
-                changeYear: true,
-                showOn: "both",
-                buttonText: "Select"
-            });
-        });
-    </script>
-
-
-}
-
-
-
 <br />
 <button type="button" class="btn btn-primary">Back</button>
 <h1>Reserve a Desk</h1>
-
-
 
 <h2>Desk:</h2>
 <br />
@@ -47,7 +22,22 @@
     <p>Date : @Html.EditorFor(model => model.dtmDate, new { htmlAttributes = new { @class = "datepicker" } })</p>
 
 }
-
+<link href="~/Content/jquery-ui-1.12.1.min.css" rel="stylesheet" />
+@section scripts {
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/actions/desks.js"></script>
+    <script>
+        $(function () {
+            $(".datepicker").datepicker({
+                dateFormat: "mm/dd/yy",
+                changeMonth: true,
+                changeYear: true,
+                showOn: "both",
+                buttonText: "Select"
+            });
+        });
+    </script>
+}
 
 <button type="button" class="btn btn-primary">Submit</button>
 
