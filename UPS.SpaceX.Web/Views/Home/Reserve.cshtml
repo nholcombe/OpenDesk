@@ -6,9 +6,26 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<h1 class="centerText">Reserve a Desk</h1>
+
+<br />
+
+<div id="centerDate">
+    @using (Html.BeginForm())
+    {
+        <h2>Date:</h2>
+        <p>Date : @Html.EditorFor(model => model.dtmDate, new { htmlAttributes = new { @class = "datepicker" } })</p>
+
+    }
+</div>
+
+<br />
+
 <link href="~/Content/jquery-ui-1.12.1.min.css" rel="stylesheet" />
-@section scripts {
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+
+@section scripts{
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
     <script src="~/Scripts/actions/desks.js"></script>
     <script>
         $(function () {
@@ -21,19 +38,11 @@
             });
         });
     </script>
-
-
 }
 
+<br /><br />
 
-
-<br />
-<button type="button" class="btn btn-primary">Back</button>
-<h1>Reserve a Desk</h1>
-
-
-
-<h2>Desk:</h2>
+<h2 class="centerText">Desk</h2>
 <br />
 
 <div id="DivAvailableDesks">
@@ -41,16 +50,34 @@
 </div>
 
 <br />
-<h2>Date:</h2>
-@using (Html.BeginForm())
-{
-    <p>Date : @Html.EditorFor(model => model.dtmDate, new { htmlAttributes = new { @class = "datepicker" } })</p>
+<div id="centerBtn">
+    <button type="button" onclick="location.href = 'Index';" class="btn btn-warning">Back</button>
+    <button class="btn btn-warning" type="button" data-toggle="modal" data-target="#exampleModal">
+        Proceed
+    </button>
 
-}
-
-
-<button type="button" class="btn btn-primary">Submit</button>
-
-
-
-
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Enter an email address to confirm your seat</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input class="form-control" id="emailField" aria-describedby="emailHelp" placeholder="Enter email" type="email">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-warning">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
