@@ -2694,9 +2694,9 @@ fieldset:disabled a.btn {
 }
 
 .btn-warning {
-  color: #fff;
-  background-color: #f0ad4e;
-  border-color: #f0ad4e;
+    color: #fff;
+    background-color: #f0ad4e;
+    border-color: #f0ad4e;
 }
 
 .btn-warning:hover {
