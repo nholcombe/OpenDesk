@@ -1,5 +1,7 @@
 ﻿@model UPS.SpaceX.Web.Models.DatePickerModels
 @{
+    /**/
+
     ViewBag.Title = "Donate";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
@@ -9,19 +11,25 @@
     li.Add(new SelectListItem() { Text = "N243N", Value = "3" });
 }
 
-<h2>Donate</h2>
 
 
-
-<button type="button" class="btn btn-primary">Back</button> <h2 style ="text-align:center">Donate</h2>
+<button type="button" class="btn btn-primary">Back</button>
+<h2 style="text-align:center">Donate</h2>
 
 @using (Html.BeginForm())
 {
-    <br />
+    <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" type="email">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+
     <p>Desk : @Html.DropDownList("OpenDeskList", li, "Select")</p>
 
-    <br/>
-    <p>Date : @Html.EditorFor(model => model.dtmDate, new { htmlAttributes = new { @class = "datepicker" } })</P>
+    <br />
+    <p>Date : @Html.EditorFor(model => model.dtmDate, new { htmlAttributes = new { @class = "datepicker" } })</p>
+
+    <button type="button" class="btn btn-primary">Submit</button>
 }
 
 <link href="~/Content/jquery-ui-1.12.1.min.css" rel="stylesheet" />
