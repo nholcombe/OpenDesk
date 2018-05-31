@@ -144,6 +144,7 @@
     <Content Include="Content\Donate.css" />
     <Content Include="Content\Home.css" />
     <Content Include="Content\Images\2ndfloor.svg" />
+    <Content Include="Content\Images\3rdfloor.svg" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />
