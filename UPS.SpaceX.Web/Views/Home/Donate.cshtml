@@ -15,11 +15,15 @@
             {
                 <br />
                 <h2>Desk</h2>
-                <div id="DivAvailableDesks"></div>
+                <input class="form-control" id="deskfield" placeholder="Enter Your Desk" type="text">
 
                 <br />
                 <h2>Date</h2>
-                <p id="date">Date : @Html.EditorFor(model => model.dtmDate, new { htmlAttributes = new { @class = "datepicker" } })</p>
+                <p id="date">@Html.EditorFor(model => model.dtmDate, new { htmlAttributes = new { @class = "datepicker" } })</p>
+
+                <br />
+                <h2>Email</h2>
+                <input class="form-control" id="emailField" aria-describedby="emailHelp" placeholder="Enter email" type="email">
             }
 
             <link href="~/Content/jquery-ui-1.12.1.min.css" rel="stylesheet" />
