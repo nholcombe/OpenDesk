@@ -13,8 +13,8 @@
 <div id="centerDate">
     @using (Html.BeginForm())
     {
-        <h2>Date:</h2>
-        <p>Date : @Html.EditorFor(model => model.dtmDate, new { htmlAttributes = new { @class = "datepicker" } })</p>
+        <h2>Date</h2>
+        <p>@Html.EditorFor(model => model.dtmDate, new { htmlAttributes = new { @class = "datepicker" } })</p>
 
     }
 </div>

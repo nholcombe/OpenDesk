@@ -20,9 +20,11 @@
             @using (Html.BeginForm())
             {
                 <br />
-                <p style="width: 100%; position: relative;">Desk : @Html.DropDownList("OpenDeskList", li, "")</p>
+                <h2>Desk</h2>
+                <p style="width: 100%; position: relative;">@Html.DropDownList("OpenDeskList", li, "")</p>
 
                 <br />
+                <h2>Date</h2>
                 <p id="date">Date : @Html.EditorFor(model => model.dtmDate, new { htmlAttributes = new { @class = "datepicker" } })</p>
             }
 
