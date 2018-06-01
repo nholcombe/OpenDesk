@@ -1966,27 +1966,33 @@ pre code {
 }
 
 .form-control {
-  display: block;
-  width: 100%;
-  padding: 0.75rem 2rem;
-  font-size: 0.875rem;
-  line-height: 1.5rem;
-  color: #55595c;
-  background-color: #f7f7f9;
-  background-clip: padding-box;
-  border: 0 solid #ced4da;
-  border-radius: 0;
-  -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
-  transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    display: block;
+    
+    padding: 0.75rem 2rem;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    color: #55595c;
+    background-color: #f7f7f9;
+    background-clip: padding-box;
+    border: 0 solid #ced4da;
+    border-radius: 0;
+    -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    position: relative;
+    left: 25%;
+    width: 50%;
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
-  .form-control {
-    -webkit-transition: none;
-    transition: none;
-  }
+    .form-control {
+        -webkit-transition: none;
+        transition: none;
+        position: relative;
+        left: -10%;
+        width: 120%;
+    }
 }
 
 .form-control::-ms-expand {

@@ -14,22 +14,19 @@
             @using (Html.BeginForm())
             {
                 <br />
-                <h2>Desk</h2>
-                <input class="form-control" id="deskfield" placeholder="Enter Your Desk" type="text">
+                @*<p style="width: 100%; position: relative;">Desk : <br />@Html.DropDownList("OpenDeskList", li, "")</p>*@
 
-                <br />
-                <h2>Date</h2>
-                <p id="date">@Html.EditorFor(model => model.dtmDate, new { htmlAttributes = new { @class = "datepicker" } })</p>
 
-                <br />
-                <h2>Email</h2>
-                <input class="form-control" id="emailField" aria-describedby="emailHelp" placeholder="Enter email" type="email">
+                <h4 id="date">Date : <br />@Html.EditorFor(model => model.dtmDate, new { htmlAttributes = new { @class = "datepicker" } })</h4> <br />
+                <h4>Enter your Desk:</h4>
+                <input class="form-control" aria-describedby="emailHelp" placeholder="" type="text" required><br />
+                <h4>Enter your Email:</h4>
+                <input class="form-control" aria-describedby="emailHelp" placeholder="" type="email"><br />
             }
 
             <link href="~/Content/jquery-ui-1.12.1.min.css" rel="stylesheet" />
             @section scripts{
                 <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
-                <script src="~/Scripts/actions/desks.js"></script>
                 <script>
                     $(function () {
                         $(".datepicker").datepicker({
@@ -45,32 +42,44 @@
         </div>
 
         <br />
-        <button onclick="location.href = 'Index';" class="btn btn-warning" submit-button>Back</button>
         <!-- Button trigger modal -->
         <button class="btn btn-warning" type="button" data-toggle="modal" data-target="#exampleModal">
-            Proceed
+            Back
         </button>
+        <button class="btn btn-warning" type="button" data-toggle="modal" data-target="#exampleMod">Submit</button>
 
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Enter an email address to confirm your seat</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to go back? Your data will be deleted.</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
-                            <input class="form-control" id="emailField" aria-describedby="emailHelp" placeholder="Enter email" type="email">
-                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                        </div>
+                    @*<div class="modal-body">
+
+                    </div>*@
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" style="text-align: center;">No</button>
+                        <button type="button" onclick="location.href = 'Index';" class="btn btn-warning" data-dismiss="modal" style="text-align: center;">Yes, I'm sure</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="exampleMod" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Thank you for submitting your desk!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-warning">Save changes</button>
+                        <button type="button" onclick="location.href = 'Index';" class="btn btn-warning" data-dismiss="modal" style="text-align: center;">Close</button>
                     </div>
                 </div>
             </div>
