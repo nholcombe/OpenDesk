@@ -273,7 +273,8 @@
     <Content Include="Views\Shared\homepage.cshtml" />
     <Content Include="Views\Home\LookUp.cshtml" />
     <Content Include="Views\Shared\TestDesk.cshtml" />
-    <Content Include="Views\Home\_DeskSelect.cshtml" />
+    <Content Include="Views\Home\modal.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

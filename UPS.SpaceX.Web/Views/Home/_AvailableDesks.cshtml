@@ -11,16 +11,16 @@
     <table class="table table-hover">
         <thead>
             <tr>
-                <th scope="col">Type</th>
                 <th scope="col">DESK</th>
                 <th scope="col">DATE</th>
+                <th scope="col">EMAIL</th>
             </tr>
         </thead>
         <tbody>
             @foreach (UPS.SpaceX.Core.DeskDto desk in Model)
             {
             <tr>
-                <th scope="row">Active</th>
+                <th scope="row"></th>
                 <td value="@desk.Id">@desk.Name</td>
                 <th scope="row">Blank</th>
             </tr>
