@@ -2,12 +2,6 @@
 @{
     ViewBag.Title = "Donate";
     Layout = "~/Views/Shared/_Layout.cshtml";
-
-    List<SelectListItem>
-    li = new List<SelectListItem>();
-    li.Add(new SelectListItem() { Text = "N243N", Value = "1" });
-    li.Add(new SelectListItem() { Text = "N243N", Value = "2" });
-    li.Add(new SelectListItem() { Text = "N243N", Value = "3" });
 }
 
 <div class="donateMain">
@@ -21,7 +15,7 @@
             {
                 <br />
                 <h2>Desk</h2>
-                <p style="width: 100%; position: relative;">@Html.DropDownList("OpenDeskList", li, "")</p>
+                <div id="DivAvailableDesks"></div>
 
                 <br />
                 <h2>Date</h2>
@@ -31,6 +25,7 @@
             <link href="~/Content/jquery-ui-1.12.1.min.css" rel="stylesheet" />
             @section scripts{
                 <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+                <script src="~/Scripts/actions/desks.js"></script>
                 <script>
                     $(function () {
                         $(".datepicker").datepicker({
