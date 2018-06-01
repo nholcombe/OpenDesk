@@ -40,13 +40,13 @@
     width: 50%;
 }
 
-@media screen and (max-width: 600px){
+/*@media screen and (max-width: 600px){
     #emailFiel {
         position: relative;
         left: 10%;
         width: 80%;
     }
-    }
+    }*/
 
 #title{
     position: relative;
