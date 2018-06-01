@@ -6,37 +6,39 @@
 
 <h1 style="text-align:center">LookUp</h1>
 <br />
-<h2>Email</h2>
+<h2 class="centerText">Email</h2>
 
 <div class="container">
     <div class="row">
         <div class="col-md">
-            
-            <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" type="email">
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                <button type="button" class="btn btn-primary">Submit</button>
+            <div id="centerDate">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input class="form-control" id="emailFiel" aria-describedby="emailHelp" placeholder="Enter email" type="email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    <button type="button" onclick="myFunction()" class="btn btn-warning">Submit</button>
+                </div>
             </div>
-   
         </div>
-
-        <div class="col-md">
-            <h2>Karma Points:</h2>
-            <br />
-            <h2><u>Reservations</u></h2>
-        </div>
-        <div class="col-md">
-            <h2><u>Donated</u></h2>
-        </div>
-</div>
     </div>
-   
-        
-       
-        
-        
+</div>
 
+<div id="myDIV" style="display:none;">
+    <div class="centerStuff">
+        <h2>Karma Points:</h2>
+        <br />
+        <h2><u>Reservations</u></h2><br /><br />
+        <div id="DivAvailableDesks">
 
+        </div>
+    </div>
+    <div class="centerStuff">
+        <h2><u>Donated</u></h2>
+    </div>
+</div>
 
-
+<script>
+function myFunction() {
+    document.getElementById('myDIV').style.display = "block";
+}
+</script>
