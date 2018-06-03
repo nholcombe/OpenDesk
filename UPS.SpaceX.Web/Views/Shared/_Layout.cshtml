@@ -8,15 +8,16 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    
+
     @Html.Partial("_NavBar")
 
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p style="text-align:center;">
-            Copyright &copy; @DateTime.Now.Year United Parcel Service of America, Inc. All  Rights Reserved.</p>
+            <p style="text-align:center; font-size: 10px">
+                Copyright &copy; @DateTime.Now.Year United Parcel Service of America, Inc. All  Rights Reserved.
+            </p>
         </footer>
     </div>
 

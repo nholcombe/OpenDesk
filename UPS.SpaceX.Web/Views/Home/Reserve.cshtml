@@ -13,20 +13,15 @@
     <div id="centerDate">
         @using (Html.BeginForm())
         {
-        <h4 id="date">Date<br />@Html.EditorFor(model => model.dtmDate, new { htmlAttributes = new { @class = "datepicker" } })</h4>
+            <h4 id="date">Date  <br />@Html.EditorFor(model => model.dtmDate, new { htmlAttributes = new { @class = "datepicker" } })</h4> <br />
 
             <br />
             <h4>Enter your Email</h4>
             <input class="form-control" id="email_field" align-text="center" aria-describedby="emailHelp" placeholder="" type="email">
-
         }
 
-
         <br />
-
         <link href="~/Content/jquery-ui-1.12.1.min.css" rel="stylesheet" />
-
-
         @section scripts{
             <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
             <script src="~/Scripts/actions/desks.js"></script>
@@ -42,12 +37,10 @@
                 });
             </script>
         }
-    </div>
 
-    <br />
-    <h4 class="centerText">Select Your Desk</h4>
-    <div id="DivAvailableDesks">
-
+        <br />
+        <h4 class="centerText">Select Your Desk</h4>
+        <div id="DivAvailableDesks"></div>
     </div>
 
     <br />
@@ -70,7 +63,7 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label>
-                            <input class="form-control" id="emailField" aria-describedby="emailHelp" placeholder="Enter email" type="email">
+                            <input class="form-control" id="emailField" aria-describedby="emailHelp" placeholder="" type="email">
                             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                         </div>
                     </div>

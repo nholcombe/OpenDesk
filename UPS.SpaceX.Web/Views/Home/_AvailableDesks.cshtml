@@ -1,7 +1,5 @@
 ﻿@model IEnumerable<UPS.SpaceX.Core.DeskDto>
 
-
-
 <div>
     <table class="table table-hover">
         <thead>
@@ -12,14 +10,27 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (UPS.SpaceX.Core.DeskDto desk in Model)
+            @*@foreach (UPS.SpaceX.Core.DeskDto desk in Model)
             {
                 <tr>
-                    <th scope="row"></th>
+                    <th value="@desk.Id">@desk.Id</th>
                     <td value="@desk.Id">@desk.Name</td>
-                    <th scope="row">Blank</th>
+                    <th value="@desk.Id">Blank</th>
                 </tr>
-            }
+            }*@
+
+            @*Delete me later*@
+            <tr>
+                <th>S243D</th>
+                <th>06/11/18</th>
+                <th>jsmith@ups.com</th>
+            </tr>
+            <tr>
+                <th>N345A</th>
+                <th>06/12/18</th>
+                <th>jlopez@ups.com</th>
+            </tr>
+            @*Delete me later*@
         </tbody>
     </table>
 </div>
