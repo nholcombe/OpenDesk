@@ -6,81 +6,78 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1 class="centerText">Reserve a Desk</h1>
+<h2 class="centerText">Reserve</h2>
 
 <br />
+<div class=script-wrap>
+    <div id="centerDate">
+        @using (Html.BeginForm())
+        {
+        <h4 id="date">Date<br />@Html.EditorFor(model => model.dtmDate, new { htmlAttributes = new { @class = "datepicker" } })</h4>
 
-<div id="centerDate">
-    @using (Html.BeginForm())
-    {
-        <h2>Date</h2>
-        <p>@Html.EditorFor(model => model.dtmDate, new { htmlAttributes = new { @class = "datepicker" } })</p>
+            <br />
+            <h4>Enter your Email</h4>
+            <input class="form-control" id="email_field" align-text="center" aria-describedby="emailHelp" placeholder="" type="email">
+
+        }
+
 
         <br />
-        <h2>Email</h2>
-        <input class="form-control" id="email_field" align-text="center" aria-describedby="emailHelp" placeholder="Enter email" type="email">
 
-    }
-</div>
-
-<br />
-
-<link href="~/Content/jquery-ui-1.12.1.min.css" rel="stylesheet" />
+        <link href="~/Content/jquery-ui-1.12.1.min.css" rel="stylesheet" />
 
 
-@section scripts{
-    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
-    <script src="~/Scripts/actions/desks.js"></script>
-    <script>
-        $(function () {
-            $(".datepicker").datepicker({
-                dateFormat: "mm/dd/yy",
-                changeMonth: true,
-                changeYear: true,
-                showOn: "both",
-                buttonText: "Select"
-            });
-        });
-    </script>
-}
+        @section scripts{
+            <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+            <script src="~/Scripts/actions/desks.js"></script>
+            <script>
+                $(function () {
+                    $(".datepicker").datepicker({
+                        dateFormat: "mm/dd/yy",
+                        changeMonth: true,
+                        changeYear: true,
+                        showOn: "both",
+                        buttonText: "Select"
+                    });
+                });
+            </script>
+        }
+    </div>
 
-<br /><br />
+    <br />
+    <h4 class="centerText">Select Your Desk</h4>
+    <div id="DivAvailableDesks">
 
-<h2 class="centerText">Desk</h2>
-<div id="DivAvailableDesks">
+    </div>
 
-</div>
+    <br />
+    <div id="centerBtn">
+        <button type="button" onclick="location.href = 'Index';" class="btn btn-warning">Back</button>
+        <button class="btn btn-warning" type="button" data-toggle="modal" data-target="#exampleModal">
+            Proceed
+        </button>
 
-<p>Enter your Email:</p>
-<input class="form-control" aria-describedby="emailHelp" placeholder="" type="email"><br />
-
-<br />
-<div id="centerBtn">
-    <button type="button" onclick="location.href = 'Index';" class="btn btn-warning">Back</button>
-    <button class="btn btn-warning" type="button" data-toggle="modal" data-target="#exampleModal">
-        Proceed
-    </button>
-
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Enter an email address to confirm your seat</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input class="form-control" id="emailField" aria-describedby="emailHelp" placeholder="Enter email" type="email">
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Enter an email address to confirm your seat</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-warning">Save changes</button>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input class="form-control" id="emailField" aria-describedby="emailHelp" placeholder="Enter email" type="email">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-warning">Save changes</button>
+                    </div>
                 </div>
             </div>
         </div>
