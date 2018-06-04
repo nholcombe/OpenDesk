@@ -14,13 +14,11 @@
             @using (Html.BeginForm())
             {
                 <br />
-
-
                 <h4 id="date">Date  <br />@Html.EditorFor(model => model.dtmDate, new { htmlAttributes = new { @class = "datepicker" } })</h4> <br />
                 <h4>Enter your Desk</h4>
                 <input class="form-control" aria-describedby="emailHelp" placeholder="" type="text" required><br />
                 <h4>Enter your Email</h4>
-                <input class="form-control" aria-describedby="emailHelp" placeholder="" type="email"><br />
+                <input class="form-control" aria-describedby="emailHelp" placeholder="" type="email" required><br />
             }
 
             <link href="~/Content/jquery-ui-1.12.1.min.css" rel="stylesheet" />
